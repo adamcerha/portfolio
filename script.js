@@ -2,33 +2,42 @@
 (function () {
     const placeholderThumb = 'assets/thumbs/placeholder.svg';
 
+    const categoryLabels = {
+        'All': 'Vše',
+        '3D': '3D',
+        'Posters': 'Plakáty',
+        'Campaigns': 'Kampaně',
+        'Video&Game': 'Video & Hry'
+    };
+    const labelFor = (c) => categoryLabels[c] || c;
+
     const portfolioItems = [
         // 3D graphics
         {
             id: '3d-1', title: 'ArchViz - Liminální prostor', category: '3D',
             description: 'Architektonická vizualizace liminálního prostoru.',
-            Role: '3D graphics', Nástroje: ['Blender'], outcome: 'Improved hard-surface workflow.',
+            Role: '3D grafik', Nástroje: ['Blender'], Předmět: '4ME213 – 3D grafika', outcome: 'Improved hard-surface workflow.',
             folder: 'assets/3D/ARCHVIZ', extension: 'png', thumb: 'assets/3D/ARCHVIZ/1.png',
             links: {}
         },
         {
             id: '3d-2', title: 'Maskot - Plyšové auto', category: '3D',
             description: '3D model plyšového auta jako maskot.',
-            Role: '3D graphics', Nástroje: ['Blender'], outcome: 'Balanced composition and light.',
+            Role: '3D grafik', Nástroje: ['Blender'], outcome: 'Balanced composition and light.',
             folder: 'assets/3D/CAR', files: ['car1.png', 'car2.png'], thumb: 'assets/3D/CAR/car1.png',
             links: {}
         },
         {
             id: '3d-3', title: 'Concept art - Gun', category: '3D',
             description: 'Model zbraně navržené na základě vlastního concept artu.',
-            Role: '3D graphics', Nástroje: ['Blender'], outcome: 'Reusable material library.',
+            Role: '3D grafik', Nástroje: ['Blender'], outcome: 'Reusable material library.',
             folder: 'assets/3D/GUN', files: ['Untitled.png', 'Untitled2.png'], thumb: 'assets/3D/GUN/Untitled.png',
             links: {}
         },
         {
             id: '3d-4', title: 'Charakter pro videohru', category: '3D',
             description: 'Úprava a animace modelu nepřátelského NPC pro hru Pale Trial.',
-            Role: '3D graphics', Nástroje: ['Blender'], outcome: '',
+            Role: '3D grafik', Nástroje: ['Blender'], Předmět: '4ME383 – Základy herního designu', outcome: '',
             folder: 'assets/3D/SPIDER', files: ['potvora.png', 'potvora2.png'], thumb: 'assets/3D/SPIDER/potvora.png',
             links: {}
         },
@@ -49,7 +58,7 @@
         {
             id: 'poster-3', title: 'Poster: Death Grips Berlin', category: 'Posters',
             description: 'Poster design pro koncert Death Grips v Berlíně.',
-            Role: 'Grafik', Nástroje: ['Adobe Illustrator'], outcome: 'Energetický plakát s výraznou typografií.',
+            Role: 'Grafik', Nástroje: ['Adobe Illustrator'], Předmět: '4ME110 – Základy počítačové grafiky', outcome: 'Energetický plakát s výraznou typografií.',
             images: ['assets/POSTERS/deathgrips.jpg'], thumb: 'assets/POSTERS/deathgrips.jpg', links: {}
         },
 
@@ -57,21 +66,21 @@
         {
             id: 'camp-ecomail', title: 'Ecomail Campaign', category: 'Campaigns', caseStudy: true, year: '2024',
             description: 'Marketingové vizuály zaměřené na srozumitelnost a přehlednost.',
-            Role: 'Grafik', Nástroje: ['Adobe Photoshop','Adobe Illustrator'], outcome: 'Consistent visual set increasing engagement.',
+            Role: 'Grafik', Nástroje: ['Adobe Photoshop','Adobe Illustrator'], Předmět: '4ME251 – Řízení multimediálních projektů (kreativita a produkce)', outcome: 'Consistent visual set increasing engagement.',
             folder: 'assets/ECOMAIL', pattern: 'EcomailPrezentace2_{i}', extension: 'jpg', thumb: 'assets/ECOMAIL/EcomailPrezentace2_1.jpg',
             links: {}
         },
         {
             id: 'camp-fis', title: 'VŠE Green FIS Campaign', category: 'Campaigns', caseStudy: true, year: '2023',
             description: 'University faculty campaign emphasizing information architecture.',
-            Role: 'Grafik', Nástroje: ['Adobe InDesign','Adobe Illustrator'], outcome: 'Unified look across materials.',
+            Role: 'Grafik', Nástroje: ['Adobe InDesign','Adobe Illustrator'], Předmět: '4ME251 – Řízení multimediálních projektů (kreativita a produkce)', outcome: 'Unified look across materials.',
             folder: 'assets/CSR', pattern: 'CSR-prez-nahled_{i}', extension: 'jpg', thumb: 'assets/CSR/CSR-prez-nahled_1.jpg',
             links: {}
         },
         {
             id: 'camp-pps', title: 'PPS (Pražské popelářské služby) – Visual Identity', category: 'Campaigns', caseStudy: true, year: '2022',
             description: 'Fictional brand with complete identity system: logo, color, typography.',
-            Role: 'Grafik', Nástroje: ['Adobe Illustrator','Adobe InDesign'], outcome: 'Coherent brand guide and assets.',
+            Role: 'Grafik', Nástroje: ['Adobe Illustrator','Adobe InDesign'], Předmět: '4ME110 – Základy počítačové grafiky', outcome: 'Coherent brand guide and assets.',
             folder: 'assets/PPS', files: [
                 'banner1.png','banner2.png','banner3.png',
                 'mockup1.png','mockup2.png','mockup3.png','mockup4.png','mockup5.png',
@@ -92,7 +101,7 @@
         {
             id: 'vid-cowboy', title: 'Cowboy Stuff - Animace', category: 'Video&Game',
             description: 'Krátká animace Cowboy Stuff.',
-            Role: 'Animátor', Nástroje: ['Adobe After Effects','Adobe Photoshop'], outcome: '',
+            Role: 'Animátor', Nástroje: ['Adobe After Effects','Adobe Photoshop'], Předmět: '4ME314 – Grafika a animace', outcome: '',
             videoUrl: 'https://www.youtube.com/watch?v=ZYn0Ihbhkpk',
             thumb: 'https://img.youtube.com/vi/ZYn0Ihbhkpk/hqdefault.jpg',
             images: [], links: {}
@@ -100,7 +109,7 @@
         {
             id: 'vid-mezi', title: 'Mezi Zdmi - Dokument', category: 'Video&Game',
             description: 'Dokumentární film Mezi Zdmi.',
-            Role: 'Režie', Nástroje: ['DaVinci Resolve','Premiere Pro'], outcome: '',
+            Role: 'Režie', Nástroje: ['DaVinci Resolve','Premiere Pro'], Předmět: '4ME231 – Základy audiovizuální komunikace', outcome: '',
             videoUrl: 'https://www.youtube.com/watch?v=nDyv7YVN5Lw',
             thumb: 'https://img.youtube.com/vi/nDyv7YVN5Lw/hqdefault.jpg',
             images: [], links: {}
@@ -108,7 +117,7 @@
         {
             id: 'vid-synteza', title: 'Syntéza - Reportáž', category: 'Video&Game',
             description: 'Reportáž Syntéza.',
-            Role: 'Režie', Nástroje: ['DaVinci Resolve','Premiere Pro'], outcome: '',
+            Role: 'Režie', Nástroje: ['DaVinci Resolve','Premiere Pro'], Předmět: '4ME231 – Základy audiovizuální komunikace', outcome: '',
             videoUrl: 'https://www.youtube.com/watch?v=F6IqYw3F4_g',
             thumb: 'https://img.youtube.com/vi/F6IqYw3F4_g/hqdefault.jpg',
             images: [], links: {}
@@ -116,9 +125,17 @@
         {
             id: 'game-pale', title: 'Pale Trial - Videohra', category: 'Video&Game',
             description: 'Videohra The Pale Trial – příspěvek k vývoji.',
-            Role: 'Vývojář, Animátor', Nástroje: ['Godot','Blender'], outcome: 'Cleaner UI and asset pipeline.',
-            images: ['assets/PALETRIAL/paletrial.jpg'], thumb: 'assets/PALETRIAL/paletrial.jpg', 
+            Role: 'Vývojář, Animátor', Nástroje: ['Godot','Blender'], Předmět: '4ME383 – Základy herního designu', outcome: 'Cleaner UI and asset pipeline.',
+            images: ['assets/PALETRIAL/paletrial.jpg'], thumb: 'assets/PALETRIAL/paletrial.jpg',
             links: { 'Hrát na itch.io': 'https://aristrela.itch.io/the-pale-trial' }
+        },
+        {
+            id: 'anim-printer', title: 'Printer - 3D animace', category: 'Video&Game', categories: ['Video&Game', '3D'],
+            description: '3D animace dle originálního námětu.',
+            Role: 'Animace, 3D grafik', Nástroje: ['Blender','DaVinci Resolve'], Předmět: '4ME315 – 3D animace (principy a aplikace)', outcome: '',
+            videoUrl: 'https://www.youtube.com/watch?v=RagS8EM1Puc',
+            thumb: 'https://img.youtube.com/vi/RagS8EM1Puc/hqdefault.jpg',
+            images: [], links: {}
         }
     ];
 
@@ -163,6 +180,7 @@
 
     function img(src, alt) {
         const i = el('img', { alt: alt || '', loading: 'lazy' });
+        i.draggable = false;
         i.src = src || placeholderThumb;
         i.classList.add('skeleton');
         i.addEventListener('load', () => i.classList.remove('skeleton'));
@@ -174,10 +192,12 @@
         const thumbSrc = item.thumb
             || (item.images && item.images[0])
             || (item.folder ? `${item.folder}/${item.pattern ? item.pattern.replace('{i}', 1) : 1}.${item.extension || 'png'}` : placeholderThumb);
-        const thumb = el('div', { class: 'thumb' }, [img(thumbSrc, item.title)]);
+        const cats = item.categories || [item.category];
+        const badge = el('span', { class: 'thumb-badge' }, [document.createTextNode(labelFor(cats[0]))]);
+        const thumb = el('div', { class: 'thumb' }, [img(thumbSrc, item.title), badge]);
         const body = el('div', { class: 'body' });
         body.append(el('div', { class: 'title' }, [document.createTextNode(item.title)]));
-        body.append(el('div', { class: 'meta' }, [document.createTextNode(item.category)]));
+        body.append(el('div', { class: 'meta' }, [document.createTextNode(cats.map(labelFor).join(' · '))]));
         const actions = el('div', { class: 'actions' });
         if (item.links && item.links.website) {
             const extBtn = el('a', { class: 'btn btn-outline', href: item.links.website, target: '_blank', rel: 'noopener' }, [document.createTextNode('Visit')]);
@@ -187,14 +207,116 @@
         card.append(thumb, body);
         card.addEventListener('click', () => openModal(item));
         card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openModal(item); });
+        card.addEventListener('mouseenter', () => onCardHover(card));
         return card;
     }
 
-    function renderWork() {
-        const items = portfolioItems.filter(i => currentFilter === 'All' ? true : i.category === currentFilter);
-        workGrid.innerHTML = '';
-        items.forEach(item => workGrid.append(createCard(item)));
+    // Carousel state
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let carouselPaused = reduceMotion;
+    let carouselRaf = null;
+    let dragMoved = false;
+    let dragActive = false;
+    let centerSuppressUntil = 0;
+
+    function centerCard(card) {
+        const c = workGrid.getBoundingClientRect();
+        const k = card.getBoundingClientRect();
+        const delta = (k.left + k.width / 2) - (c.left + c.width / 2);
+        if (Math.abs(delta) < 2) return;
+        centerSuppressUntil = Date.now() + 550;
+        workGrid.scrollTo({ left: workGrid.scrollLeft + delta, behavior: 'smooth' });
     }
+
+    function onCardHover(card) {
+        // Don't fight a drag, and ignore the cascade of mouseenter events
+        // that fire while a smooth centering scroll is animating.
+        if (dragActive) return;
+        if (Date.now() < centerSuppressUntil) return;
+        centerCard(card);
+    }
+
+    function startCarousel() {
+        if (carouselRaf) { cancelAnimationFrame(carouselRaf); carouselRaf = null; }
+        const speed = 0.5; // px per frame
+        function step() {
+            // Stop the loop entirely while paused so the page can go idle
+            if (carouselPaused) { carouselRaf = null; return; }
+            const half = workGrid.scrollWidth / 2;
+            if (half > 0) {
+                workGrid.scrollLeft += speed;
+                if (workGrid.scrollLeft >= half) workGrid.scrollLeft -= half;
+            }
+            carouselRaf = requestAnimationFrame(step);
+        }
+        carouselRaf = requestAnimationFrame(step);
+    }
+
+    function pauseCarousel() { carouselPaused = true; }
+    function resumeCarousel() {
+        if (reduceMotion) return;
+        carouselPaused = false;
+        startCarousel();
+    }
+
+    function renderWork() {
+        const items = portfolioItems.filter(i => {
+            if (currentFilter === 'All') return true;
+            return (i.categories || [i.category]).includes(currentFilter);
+        });
+        const track = el('div', { class: 'carousel-track' });
+        // Two copies for a seamless infinite loop
+        items.forEach(item => track.append(createCard(item)));
+        items.forEach(item => track.append(createCard(item)));
+        workGrid.classList.remove('grid');
+        workGrid.classList.add('carousel');
+        workGrid.innerHTML = '';
+        workGrid.append(track);
+        workGrid.scrollLeft = 0;
+        startCarousel();
+    }
+
+    // Pause on hover / focus, resume on leave
+    (function initCarouselInteractions() {
+        workGrid.addEventListener('mouseenter', pauseCarousel);
+        workGrid.addEventListener('mouseleave', resumeCarousel);
+        workGrid.addEventListener('focusin', pauseCarousel);
+        workGrid.addEventListener('focusout', resumeCarousel);
+
+        // Horizontal scroll with the mouse wheel while hovering
+        workGrid.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                workGrid.scrollLeft += e.deltaY;
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Drag to browse
+        let down = false, startX = 0, startScroll = 0;
+        workGrid.addEventListener('pointerdown', (e) => {
+            if (e.button !== 0) return;
+            down = true; dragActive = false; dragMoved = false;
+            startX = e.clientX; startScroll = workGrid.scrollLeft;
+            workGrid.classList.add('dragging');
+        });
+        window.addEventListener('pointermove', (e) => {
+            if (!down) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 4) { dragMoved = true; dragActive = true; }
+            workGrid.scrollLeft = startScroll - dx;
+        });
+        window.addEventListener('pointerup', () => {
+            down = false;
+            workGrid.classList.remove('dragging');
+            // Keep suppressing hover-centering briefly after a drag release
+            centerSuppressUntil = Date.now() + 200;
+            setTimeout(() => { dragActive = false; }, 0);
+        });
+        // Suppress the click that follows a drag so it doesn't open the modal
+        workGrid.addEventListener('click', (e) => {
+            if (dragMoved) { e.stopPropagation(); e.preventDefault(); dragMoved = false; }
+        }, true);
+    })();
 
     // Projects section removed
 
@@ -219,16 +341,30 @@
     const modalDesc = modal.querySelector('.modal-desc');
     const modalRole = modal.querySelector('.modal-role');
     const modalTools = modal.querySelector('.modal-tools');
+    const modalSubjectRow = modal.querySelector('.modal-subject-row');
+    const modalSubject = modal.querySelector('.modal-subject');
+    const modalStudyNote = modal.querySelector('.modal-study-note');
     const modalLinks = modal.querySelector('.modal-links');
     const modalGallery = modal.querySelector('.modal-gallery');
     let lastFocus = null;
 
     function openModal(item) {
+        pauseCarousel();
         lastFocus = document.activeElement;
         modalTitle.textContent = item.title;
         modalDesc.textContent = item.description;
         modalRole.textContent = item.Role || item.role || '';
         modalTools.textContent = (item.Nástroje || item.tools || []).join(', ');
+        const subject = item.Předmět || item.subject || '';
+        if (subject) {
+            modalSubject.textContent = subject;
+            modalSubjectRow.hidden = false;
+            modalStudyNote.hidden = false;
+        } else {
+            modalSubject.textContent = '';
+            modalSubjectRow.hidden = true;
+            modalStudyNote.hidden = true;
+        }
         modalLinks.innerHTML = '';
         if (item.links) {
             Object.entries(item.links).forEach(([key, href]) => {
@@ -293,6 +429,7 @@
 
     function closeModal() {
         modal.setAttribute('aria-hidden', 'true');
+        resumeCarousel();
         if (lastFocus) lastFocus.focus();
     }
 
